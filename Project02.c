@@ -17,6 +17,7 @@ str[i] = tolower(str[i]);
 }
 int main()
 {
+    int ypoint=0,cpoint=0;
     int secret, result;
     char guess[10];
     
@@ -80,14 +81,21 @@ int main()
     }
     if(result==1){
         printf("You win!\n");
+        ypoint++;
     }
     else if(result==(-1)){
         printf("You Lose!\n");
+        cpoint++;
     }
     else{
         printf("Draw!\n");
     }
+    printf("--------------------\n");
+    printf("Computer score : %d\n",cpoint);
+    printf("Your Points : %d\n",ypoint);
+    printf("--------------------\n");
 
+    if((cpoint==5) || (ypoint==5)) break;
 }while(1);
     
     return 0;
